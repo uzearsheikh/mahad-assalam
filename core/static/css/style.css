@@ -1,0 +1,90 @@
+/* ---------- Global Styles ---------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f6fa;
+    margin: 0;
+    padding: 0;
+     background-color: #fef3c7;
+}
+
+/* ---------- Hero Section ---------- */
+.hero-section {
+    background: linear-gradient(to right, #fef3c7, #198754);
+    padding: 3rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-bottom: 4px solid white;
+    position: relative;
+    text-align: center;
+}
+
+.hero-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    padding: 8px;
+}
+
+.hero-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- Page Title ---------- */
+.page-title {
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #0f5132;
+}
+
+/* ---------- Card Grid ---------- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+/* ---------- Card Box ---------- */
+.card-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- List Items ---------- */
+.list-item a {
+    display: inline-block;
+    color: #198754;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.list-item a:hover {
+    color: #cdee99;
+    text-decoration: underline;
+}
+header h1 {
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0;
+    padding: 4px 0;
+}

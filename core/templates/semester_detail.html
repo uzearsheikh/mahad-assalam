@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="max-w-3xl mx-auto px-6 py-12 backdrop-blur-md bg-white/80 rounded-2xl shadow-2xl">
+
+    <!-- Heading -->
+    <div class="text-center mb-10">
+        <h2 class="text-4xl font-extrabold text-white bg-gradient-to-r from-yellow-600 to-blue-600 px-6 py-3 rounded-xl shadow-lg inline-block tracking-wide">
+            📗 Select a Marhala to View Books & Notes
+        </h2>
+    </div>
+
+    <!-- Marhala Dropdown Selector -->
+    <form id="marhala-select-form" class="text-center">
+        <label for="marhala-select" class="block mb-3 text-lg font-medium text-gray-800">
+            Choose a Marhala:
+        </label>
+        <select id="marhala-select" class="w-full md:w-2/3 px-4 py-3 rounded-lg border border-gray-300 shadow focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="">-- Select Marhala --</option>
+            {% for marhala in marhalas %}
+                <option value="{% url 'marhala_detail' marhala.id %}">
+                    {{ marhala.name }} ({{ marhala.urdu_name }})
+                </option>
+            {% endfor %}
+        </select>
+    </form>
+
+</div>
+
+<!-- Redirect Script -->
+<script>
+    document.getElementById('marhala-select').addEventListener('change', function () {
+        const url = this.value;
+        if (url) {
+            window.location.href = url;
+        }
+    });
+</script>
+
+{% endblock %}

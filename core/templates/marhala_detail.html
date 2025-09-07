@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+<!--
+<h2 class="text-2xl font-semibold text-center text-purple-800 mb-6">📘 Select a Marhala</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    {% for marhala in marhalas %}
+    <div class="bg-white rounded-xl shadow p-6 border border-purple-300">
+        <h3 class="text-lg font-semibold text-purple-700">{{ marhala.name }}</h3>
+        <a href="{% url 'marhala_detail' marhala.id %}"
+           class="inline-block mt-4 px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition">
+           View Books & Notes
+        </a>
+    </div>
+    {% endfor %}
+</div>
+-->
+<h2 class="text-3xl font-extrabold text-center text-white drop-shadow mb-10">
+    📗 Books and 📄 Notes
+</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto px-4">
+
+    <!-- Books Section -->
+    <div class="backdrop-blur-sm bg-white/70 p-6 rounded-xl shadow-xl">
+        <h3 class="text-xl font-bold text-green-800 mb-4 border-b border-green-300 pb-2">
+            📘 Books
+        </h3>
+        <ul class="space-y-3">
+            {% for book in books %}
+            <li class="bg-green-50 px-4 py-3 rounded-lg hover:bg-green-100 transition">
+    <a href="{{ book.file.url }}" target="_blank" class="block text-green-900 font-medium hover:underline">
+        {{ book.title }}
+    </a>
+</li>
+
+            {% empty %}
+            <li class="text-gray-600 italic">No books available.</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Notes Section -->
+    <div class="backdrop-blur-sm bg-white/70 p-6 rounded-xl shadow-xl">
+        <h3 class="text-xl font-bold text-blue-800 mb-4 border-b border-blue-300 pb-2">
+            📄 Notes
+        </h3>
+        <ul class="space-y-3">
+            {% for note in notes %}
+            <li class="bg-blue-50 px-4 py-3 rounded-lg hover:bg-blue-100 transition">
+                <a href="{{ note.file.url }}" target="_blank" class="block text-blue-900 font-medium hover:underline">
+                    {{ note.title }}
+                </a>
+            </li>
+            {% empty %}
+            <li class="text-gray-600 italic">No notes available.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+
+{% endblock %}
+

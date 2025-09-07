@@ -1,1 +1,1 @@
-web: gunicorn mahad_assalam.wsgi
+web: gunicorn app.wsgi
